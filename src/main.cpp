@@ -19,7 +19,7 @@
 WiFiManager wifiManager;
 
 // url containing the REST call to the aare.guru API
-String request_url = "http://aareguru.existenz.ch/v2018/today?values=aare&city=bern&app=touch-ada&version=1.0";
+String request_url = "http://aareguru.existenz.ch/v2018/today?values=aare&city=bern&app=touch-ada&version=1.1";
 
 // HTTPClient to perform request on aare.guru
 HTTPClient client;
