@@ -29,9 +29,6 @@ void setup()
   // set the data rate in bits per second (baud) for serial data transmission
   Serial.begin(9600);
 
-  // uncomment if you need to configure a new WiFi
-  // wifiManager.resetSettings();
-
   // setup an access point named 'aare_meter' for WiFi configuration in the browser
   wifiManager.autoConnect("aare_meter");
 
