@@ -14,12 +14,13 @@
 
 #define MAX_TEMPERATURE 25
 #define MAX_DAC_VALUE 255
+#define HTTP_SUCCESS_CODE 200
 
 // WiFiManager to configure WiFi
 WiFiManager wifiManager;
 
 // url containing the REST call to the aare.guru API
-String request_url = "http://aareguru.existenz.ch/v2018/today?values=aare&city=bern&app=touch-ada&version=1.0";
+String request_url = "http://aareguru.existenz.ch/v2018/today?values=aare&city=bern&app=touch-ada&version=1.2";
 
 // HTTPClient to perform request on aare.guru
 HTTPClient client;
@@ -48,7 +49,7 @@ void loop()
   int httpCode = client.GET();
 
   // check if the response of aare.guru is 200, meaning OK
-  if (httpCode == 200)
+  if (httpCode == HTTP_SUCCESS_CODE)
   {
     // read the body of the request, in this case the temperature
     payload = client.getString();
