@@ -25,6 +25,6 @@ To deploy the code, use the `upload` function of PlatformIO within Visual Studio
 
 ## WiFi configuration
 The WiFi configuration is done with the help of https://github.com/tzapu/WiFiManager  
-Once the code is deployed, connect any of your devices (laptop, table, smartphone) to the WiFi named *aare_meter* (no password needed).  
+Once the code is deployed, connect any of your devices (laptop, tablet, smartphone) to the WiFi named *aare_meter* (no password needed).  
 Then, enter in the address bar the IP 192.168.4.1. There you can select your WiFi and enter the password if needed.  
 Once confirmed, the ESP32 will restart again and connect with your WiFi.
