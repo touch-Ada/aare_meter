@@ -62,13 +62,15 @@ void loop()
     float temperature = payload.toFloat();
 
     // make sure that the temperature does not exceed the limits of the scale
-    if (temperature > 25) {
+    if (temperature > 25.0)
+    {
       Serial.println("Setting temperature from " + payload + " to 25");
-      temperature = 25;
+      temperature = 25.0;
     }
-    if (temperature < 0) {
+    if (temperature < 0.0)
+    {
       Serial.println("Setting temperature from " + payload + " to 0");
-      temperature = 0;
+      temperature = 0.0;
     }
 
     // calculate the DAC (digital-to-analog converter) value
