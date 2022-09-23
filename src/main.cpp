@@ -20,7 +20,7 @@
 WiFiManager wifiManager;
 
 // url containing the REST call to the aare.guru API
-String request_url = "http://aareguru.existenz.ch/v2018/today?values=aare&city=bern&app=touch-ada&version=1.2";
+String request_url = "http://aareguru.existenz.ch/v2018/today?values=aare&city=bern&app=touch-ada&version=1.3";
 
 // HTTPClient to perform request on aare.guru
 HTTPClient client;
@@ -60,6 +60,16 @@ void loop()
 
     // transform the temperature from text to a floating-point number
     float temperature = payload.toFloat();
+
+    // make sure that the temperature does not exceed the limits of the scale
+    if (temperature > 25) {
+      Serial.println("Setting temperature from " + payload + " to 25");
+      temperature = 25;
+    }
+    if (temperature < 0) {
+      Serial.println("Setting temperature from " + payload + " to 0");
+      temperature = 0;
+    }
 
     // calculate the DAC (digital-to-analog converter) value
     int temperature_dac = MAX_DAC_VALUE / MAX_TEMPERATURE * temperature;
