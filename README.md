@@ -3,7 +3,7 @@ Retro thermometer of the river Aare.
 The project uses ESP32 DAC to display the temperature on an analog voltmeter.
 This project is used for training / worshops for female IT newbies.
 
-![aare_meter](https://touchada.ch/wp-content/uploads/spotlight-insta/17908470812341003-m.jpg)
+![aare_meter](https://github.com/touch-Ada/aare_meter/blob/main/img/aare_meter_code.jpeg)
 
 ## Prerequisites
 ### Visual Studio Code
