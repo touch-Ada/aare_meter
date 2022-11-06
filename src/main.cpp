@@ -12,7 +12,8 @@
 #include <driver/dac.h>
 #include <WiFiManager.h>
 
-#define MAX_TEMPERATURE 25
+#define MIN_TEMPERATURE 0.0
+#define MAX_TEMPERATURE 25.0
 #define MAX_DAC_VALUE 255
 #define HTTP_SUCCESS_CODE 200
 
@@ -62,15 +63,15 @@ void loop()
     float temperature = payload.toFloat();
 
     // make sure that the temperature does not exceed the limits of the scale
-    if (temperature > 25.0)
+    if (temperature > MAX_TEMPERATURE)
     {
       Serial.println("Setting temperature from " + payload + " to 25");
-      temperature = 25.0;
+      temperature = MAX_TEMPERATURE;
     }
-    if (temperature < 0.0)
+    if (temperature < MIN_TEMPERATURE)
     {
       Serial.println("Setting temperature from " + payload + " to 0");
-      temperature = 0.0;
+      temperature = MIN_TEMPERATURE;
     }
 
     // calculate the DAC (digital-to-analog converter) value
